@@ -33,14 +33,14 @@ Auth::routes();
 
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\RecordController::class, 'records'])->name('home');
+
 
 
 //Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home', [App\Http\Controllers\RecordController::class, 'records'])->name('home');
 Route::get('/dates', [HomeController::class, 'dates'])->name('dates');
 Route::get('/records', [RecordController::class, 'records'])->name('records');
 /* Route::get('/reports', [RecordController::class, 'reports'])->name('reports'); */
@@ -76,7 +76,7 @@ Route::any('reports_total', [RecordController::class, 'reports_total'])->name('r
 		Route::get('rtl', ['as' => 'pages.rtl', 'uses' => 'App\Http\Controllers\PageController@rtl']);
 		Route::get('tables', ['as' => 'pages.tables', 'uses' => 'App\Http\Controllers\PageController@tables']);
 		Route::get('typography', ['as' => 'pages.typography', 'uses' => 'App\Http\Controllers\PageController@typography']);
-		Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'App\Http\Controllers\PageController@upgrade']);
+		Route::get('', ['as' => 'pages.upgrade', 'uses' => 'App\Http\Controllers\PageController@upgrade']);
 });
 
 Route::group(['middleware' => 'auth'], function () {
