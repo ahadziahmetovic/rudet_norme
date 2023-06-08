@@ -4,5 +4,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/pobjeda/public_html/norme.pobjeda.com
+    - export DEPLOYPATH=/home/pobjeda/public_html/norm
     - /bin/cp -R * $DEPLOYPATH
