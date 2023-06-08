@@ -28,10 +28,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
+
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\RecordController::class, 'records'])->name('home');
+
+
+//Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
+
+Route::group(['middleware' => 'auth'], function () {
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/dates', [App\Http\Controllers\HomeController::class, 'dates'])->name('dates');
-Route::get('/records', [App\Http\Controllers\RecordController::class, 'records'])->name('records');
+Route::get('/dates', [HomeController::class, 'dates'])->name('dates');
+Route::get('/records', [RecordController::class, 'records'])->name('records');
 /* Route::get('/reports', [RecordController::class, 'reports'])->name('reports'); */
 Route::get('/records_list', [RecordController::class, 'records_list'])->name('records_list');
 Route::get('/records_edit/{record}', [RecordController::class, 'update'])->name('records_edit');
@@ -57,16 +68,7 @@ Route::post('import_workorder', [WorkOrderController::class, 'import_workorder']
 Route::get('/autocomplete-search', [TypeaheadController::class, 'autocompleteSearch']);
 Route::any('reports', [RecordController::class, 'reports'])->name('reports');
 Route::any('reports_total', [RecordController::class, 'reports_total'])->name('reports_total');
-Auth::routes();
 
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\RecordController::class, 'records'])->name('home');
-Auth::routes();
-
-//Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
-
-Route::group(['middleware' => 'auth'], function () {
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'App\Http\Controllers\PageController@icons']);
 		
 		Route::get('maps', ['as' => 'pages.maps', 'uses' => 'App\Http\Controllers\PageController@maps']);
