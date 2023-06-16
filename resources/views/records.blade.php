@@ -49,11 +49,11 @@
                             </div>
                             <div class="col col-md-2">
                                 <label for="kolicina">Količina</label>
-                                <input type="number" id="kolicina" name="kolicina" class="form-control" placeholder="">
+                                <input type="number" id="kolicina" name="kolicina" class="form-control" placeholder="" value="0">
                             </div>
                             <div class="col col-md-2">
                                 <label for="kolicina">Sati</label>
-                                <input step="0.01" type="number" id="sati" name="sati" class="form-control" placeholder="">
+                                <input step="0.01" type="number" id="sati" name="sati" class="form-control" placeholder="" value="0">
                             </div>
                             <div class="col col-md-2">
                                 <label for="kolicina">Skart</label>

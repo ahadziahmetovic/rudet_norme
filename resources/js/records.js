@@ -25,11 +25,11 @@ $( "#unesi" ).click(function() {
    var uposlenik = String($('#search').val().trim());
    $("#search").val('');
    var kolicina = String($('#kolicina').val().trim());
-   $("#kolicina").val('');
+   $("#kolicina").val(0);
    var sati = String($('#sati').val().trim());
-   $("#sati").val('');
+   $("#sati").val(0);
    var skart = String($('#skart').val().trim());
-   $("#skart").val('');
+   $("#skart").val(0);
    var series_id = $('#series').find(":selected").val();
    var operation_id = $('#operations').find(":selected").val();
    var masina = $('#masina').find(":selected").val();
