@@ -85,6 +85,7 @@
                         <tr>
                             <th scope="col">Ime</th>
                             <th scope="col">Prezime</th>
+                            <th scope="col">Ukloni</th>
                           
                          {{--    <th scope="col" class="d-flex justify-content-center">Izlaz</th> --}}
                  
@@ -98,7 +99,13 @@
                                 <tr>
                                     <td scope="row">{{ $value->first_name }}</td>
                                     <td scope="row">{{ $value->last_name }}</td>
-                                  
+                                    <td>
+                                        <form method="POST" action="{{ route('employees.destroy', $value->id) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Briši</button>
+                                        </form>
+                                    </td>
                                     {{-- <td scope="row" class="d-flex justify-content-center">@if($data->izkol != NULL){{ $data->izkol }}@else {{0}}@endif</td> --}}
                                  
                                 </tr>

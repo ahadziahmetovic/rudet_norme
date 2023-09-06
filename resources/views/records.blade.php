@@ -47,11 +47,11 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col col-md-2">
+                            <div class="col col-md-4">
                                 <label for="kolicina">Količina</label>
                                 <input type="number" id="kolicina" name="kolicina" class="form-control" placeholder="" value="0">
                             </div>
-                            <div class="col col-md-2">
+                            <div class="col col-md-3">
                                 <label for="kolicina">Sati</label>
                                 <input step="0.01" type="number" id="sati" name="sati" class="form-control" placeholder="" value="0">
                             </div>
@@ -60,14 +60,14 @@
                                 <input type="number" id="skart" name="skart" class="form-control" placeholder=""
                                     value="0">
                             </div>
-                            <div class="col col-md-3">
+                          {{--   <div class="col col-md-3">
                                 <label for="kolicina">Serija</label>
                                 <select id="series" class="form-select">
                                     @foreach ($series as $serie)
                                         <option value="{{ $serie->id }}">{{ $serie->num_of_serie }}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> --}}
                             <div class="col col-md-3">
                                 <label for="masina">Mašina</label>
                                 <select id="masina" class="form-select">
@@ -83,13 +83,13 @@
                                 </select>
                             </div>
 
-                            <div id="datepicker" class="col col-md-3 date" data-date-format="dd.mm.yyyy">
+                            <div id="datepicker" class="col col-md-4 date" data-date-format="dd.mm.yyyy">
                                 <label for="kolicina">Datum</label>
                                 <input id="calendrier" name="datum" class="form-control" type="text" readonly />
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                             </div>
                            
-                            <div class="col-md-6 text-end mt-4">
+                            <div class="col-md-5 text-end mt-4">
                                 <button type="button" class="btn btn-success" id="unesi">Unesi radnika</button>
                             </div>
                         </div>

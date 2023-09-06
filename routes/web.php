@@ -68,7 +68,10 @@ Route::post('import_workorder', [WorkOrderController::class, 'import_workorder']
 Route::get('/autocomplete-search', [TypeaheadController::class, 'autocompleteSearch']);
 Route::any('reports', [RecordController::class, 'reports'])->name('reports');
 Route::any('reports_total', [RecordController::class, 'reports_total'])->name('reports_total');
-
+Route::delete('/operations/{id}', [OperationController::class, 'destroy'])->name('operations.destroy');
+Route::delete('/employyees/{id}', [EmployeeController::class, 'destroy'])->name('employees.destroy');
+Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+Route::delete('/workorders/{id}', [WorkOrderController::class, 'destroy'])->name('workorders.destroy');
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'App\Http\Controllers\PageController@icons']);
 		
 		Route::get('maps', ['as' => 'pages.maps', 'uses' => 'App\Http\Controllers\PageController@maps']);

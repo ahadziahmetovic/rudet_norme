@@ -70,6 +70,7 @@
                         <tr>
                             <th scope="col">Naziv operacije</th>
                             <th scope="col">Norma</th>
+                            <th scope="col">Brisanje</th>
                     
                           
                          {{--    <th scope="col" class="d-flex justify-content-center">Izlaz</th> --}}
@@ -85,7 +86,13 @@
                                     <td scope="row">{{ $value->operation }}</td>
                                     <td scope="row">{{ $value->norm }}</td>
                                    
-                                  
+                                    <td>
+                                        <form method="POST" action="{{ route('operations.destroy', $value->id) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Briši</button>
+                                        </form>
+                                    </td>
                                     {{-- <td scope="row" class="d-flex justify-content-center">@if($data->izkol != NULL){{ $data->izkol }}@else {{0}}@endif</td> --}}
                                  
                                 </tr>

@@ -26,7 +26,7 @@ class WorkOrderController extends Controller
     public function workorder()
     {
         $products = Product::where('status', '=', 1)->get();
-        $workorders = WorkOrder::where('status',1)->get();
+        $workorders = WorkOrder::where('status',1)->orderby('id', 'desc')->get();
         return view('workorder', ['products' => $products, 'workorders'=> $workorders]);
     }
 
@@ -135,8 +135,20 @@ class WorkOrderController extends Controller
      * @param  \App\Models\WorkOrder  $workOrder
      * @return \Illuminate\Http\Response
      */
-    public function destroy(WorkOrder $workOrder)
-    {
-        //
+    public function destroy($id)
+{
+    // Find the item by its ID
+    $wo = WorkOrder::find($id);
+
+    // Check if the item exists
+    if (!$wo) {
+        return redirect()->route('workorder')->with('error', 'WorkOrder not found.');
     }
+
+    // Delete the item
+    $wo->delete();
+
+    // Redirect back with a success message
+    return redirect()->route('workorder')->with('success', 'WorkOrder deleted successfully.');
+}
 }

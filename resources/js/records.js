@@ -124,7 +124,8 @@ $("#slanje" ).on( "click", function(e) {
    var kolicina = String($('#kolicina').val().trim());
    var sati = String($('#sati').val().trim());
    var skart = String($('#skart').val().trim());
-   var series_id = $('#series').find(":selected").val();
+   //var series_id = $('#series').find(":selected").val();
+   var series_id = 1;
    var masina = $('#masina').find(":selected").val();
    var date_ = $('#calendrier').datepicker('getDate');
    var masina = $('#masina').find(":selected").val();

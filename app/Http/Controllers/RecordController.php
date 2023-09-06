@@ -52,9 +52,9 @@ class RecordController extends Controller
     {
         $stanje = WorkOrder::where('status', '=', 1)->get();
 
-        $series = Serie::where('status', '=', 1)->get();
+        $series = 1;
         $operations = Operation::where('status', '=', 1)->get();
-        Log::info($series);
+        //Log::info($series);
         return view('records', ['stanje' => $stanje, 'series' => $series, 'operations' => $operations]);
     }
 
@@ -91,7 +91,7 @@ class RecordController extends Controller
                 $record->employee_id = $user->id;
                 $record->operation_id = $k['operation_id'];
                 $record->machine_no = $k['masina'];
-                $record->serie_id = $k['series_id'];
+                $record->serie_id = 1;
                 $record->save();
 
                 //Log::info($k);

@@ -88,6 +88,7 @@
                                     <tr>
                                         <th scope="col">Naziv proizvoda</th>
                                         <th scope="col">Boja</th>
+                                        <th scope="col">Brisanje</th>
                                 
                                       
                                      {{--    <th scope="col" class="d-flex justify-content-center">Izlaz</th> --}}
@@ -102,7 +103,13 @@
                                             <tr>
                                                 <td scope="row">{{ $value->product_name }}</td>
                                                 <td scope="row">{{ $value->color }}</td>
-                                               
+                                                <td>
+                                                    <form method="POST" action="{{ route('products.destroy', $value->id) }}">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">Briši</button>
+                                                    </form>
+                                                </td>
                                               
                                                 {{-- <td scope="row" class="d-flex justify-content-center">@if($data->izkol != NULL){{ $data->izkol }}@else {{0}}@endif</td> --}}
                                              

@@ -76,7 +76,8 @@
                             <tr>
                                 <th scope="col">Broj naloga</th>
                                 <th scope="col">Datum</th>
-                                <th scope="col">Detaljno</th>
+                                <th scope="col" style="text-align: center">Detaljno</th>
+                                <th scope="col">Brisanje</th>
                         
                               
                              {{--    <th scope="col" class="d-flex justify-content-center">Izlaz</th> --}}
@@ -92,7 +93,13 @@
                                         <td scope="row">{{ $value->order_number }}</td>
                                         <td scope="row">{{ $value->date }}</td>
                                         <td style="text-align: center" scope="row"><a href="{{ route('workorder_detail',$value->id)}}" class="btn btn-warning">Detaljno</a></td>
-                                       
+                                        <td>
+                                            <form method="POST" action="{{ route('workorders.destroy', $value->id) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button  type="submit" class="btn btn-danger">Briši</button>
+                                            </form>
+                                        </td>
                                       
                                         {{-- <td scope="row" class="d-flex justify-content-center">@if($data->izkol != NULL){{ $data->izkol }}@else {{0}}@endif</td> --}}
                                      

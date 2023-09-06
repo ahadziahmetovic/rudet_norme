@@ -83,8 +83,20 @@ class OperationController extends Controller
      * @param  \App\Models\Operation  $operation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Operation $operation)
-    {
-        //
+    public function destroy($id)
+{
+    // Find the item by its ID
+    $operation = Operation::find($id);
+
+    // Check if the item exists
+    if (!$operation) {
+        return redirect()->route('newOperation')->with('error', 'Opeartion not found.');
     }
+
+    // Delete the item
+    $operation->delete();
+
+    // Redirect back with a success message
+    return redirect()->route('newOperation')->with('success', 'Item deleted successfully.');
+}
 }

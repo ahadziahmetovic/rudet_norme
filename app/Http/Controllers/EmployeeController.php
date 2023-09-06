@@ -20,7 +20,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $departments = Department::get();
-        $employees = Employee::orderBy('id', 'desc')->take(5)->get();
+        $employees = Employee::orderBy('id', 'desc')->get();
         return view('newEmployee',['departments'=> $departments, 'employees'=>$employees]);
     }
 
@@ -87,8 +87,20 @@ class EmployeeController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Employee $employee)
+    public function destroy($id)
     {
-        //
+        // Find the item by its ID
+        $emp = Employee::find($id);
+    
+        // Check if the item exists
+        if (!$emp) {
+            return redirect()->route('newEmployee')->with('error', 'Employee not found.');
+        }
+    
+        // Delete the item
+        $emp->delete();
+    
+        // Redirect back with a success message
+        return redirect()->route('newEmployee')->with('success', 'Employee deleted successfully.');
     }
 }
