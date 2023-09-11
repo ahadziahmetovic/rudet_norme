@@ -15,9 +15,8 @@
                         @endif
 
                         <div class="row">
-                            <div class="col col-md-3">
-                                {{--  <label for="narudzbenica">Id</label>
-                                    <input style="text-align: center" type="text" id="id" name="id" class="form-control" value="{{$stanje->id}}" > --}}
+                    {{--         <div class="col col-md-3">
+                          
                                 <label for="narudzbenica">Nalog</label>
                                 <select id="listaNaloga" class="form-select" required>
                                     <option value="">Izaberi nalog</option>
@@ -25,16 +24,14 @@
                                         <option value="{{ $nalog->id }}">{{ $nalog->order_number }}</option>
                                     @endforeach
                                 </select>
-                            </div>
-                            <div class="col col-md-4">
+                            </div> --}}
+                   {{--          <div class="col col-md-4">
                                 <label for="narudzbenica">Proizvod</label>
                                 <select id="listaProizvoda" class="form-select">
                                     <option value="">Izaberite proizvod...</option>
-                               {{--      @foreach ($products as $product)
-                                        <option value="{{ $product->id }}">{{ $product->product_name }}</option>
-                                    @endforeach --}}
+                         
                                 </select>
-                            </div>
+                            </div> --}}
                             <div class="col col-md-5">
                                 <label for="sifra">Uposlenik</label>
                                 <input type="text" id="search" name="search" class="form-control" placeholder="" required>
@@ -89,7 +86,7 @@
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                             </div>
                            
-                            <div class="col-md-5 text-end mt-4">
+                            <div class="col-md-12 text-end mt-4">
                                 <button type="button" class="btn btn-success" id="unesi">Unesi radnika</button>
                             </div>
                         </div>

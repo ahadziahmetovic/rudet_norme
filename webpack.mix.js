@@ -17,7 +17,6 @@ mix.js('resources/js/app.js', 'public/js')
    .js('resources/js/workorder.js', 'public/js')
    .js('resources/js/datum.js', 'public/js')
    .js('resources/js/reports.js', 'public/js')
-   .js('resources/js/datepicker.js', 'public/js')
    .vue()
     .sass('resources/sass/app.scss', 'public/css')
     .css('resources/css/reports.css', 'public/css');

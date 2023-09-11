@@ -86,8 +86,10 @@ class RecordController extends Controller
                 $record->scrap = $k['scrap'];
                 $record->date = $k['datum'];
                 $record->machine_no = 1;
-                $record->order_id = $k['nalog_id'];
-                $record->product_id = $k['product_id'];
+                //$record->order_id = $k['nalog_id'];
+                $record->order_id = 15;
+                //$record->product_id = $k['product_id'];
+                $record->product_id = 18;
                 $record->employee_id = $user->id;
                 $record->operation_id = $k['operation_id'];
                 $record->machine_no = $k['masina'];

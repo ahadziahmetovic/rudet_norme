@@ -6,7 +6,7 @@ $(function () {
        
       }).datepicker('update', new Date());
 
-         $("#datepicker2").datepicker({ 
+      $("#datepicker2").datepicker({ 
             autoclose: true, 
             todayHighlight: true
       }).datepicker('update', new Date()); 

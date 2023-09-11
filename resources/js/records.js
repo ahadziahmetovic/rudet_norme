@@ -19,9 +19,11 @@ $('#listaNaloga').change(function () {
 });
 
 $( "#unesi" ).click(function() {
-   var nalog_id = String($('#listaNaloga').val().trim());
-   var proizvod_id = $('#listaProizvoda').find(":selected").val();
-   var proizvod = $('#listaProizvoda').find(":selected").text();
+ // var nalog_id = String($('#listaNaloga').val().trim());
+  var nalog_id = 15;
+  var proizvod_id = $('#listaProizvoda').find(":selected").val();
+  var proizvod_id = 18;
+ var proizvod = $('#listaProizvoda').find(":selected").text();
    var uposlenik = String($('#search').val().trim());
    $("#search").val('');
    var kolicina = String($('#kolicina').val().trim());
@@ -49,8 +51,8 @@ $( "#unesi" ).click(function() {
   var tr_str = "<tr>" +
   "<td style='display:none;'>"+nalog_id+"</td>"+
   "<td >" + uposlenik + "</td>" +
-  "<td align='center' style='display:none;'>" + proizvod_id + "</td>" +
-  "<td align='center'>" + proizvod + "</td>" +
+"<td align='center' style='display:none;'>" + proizvod_id + "</td>" +
+ "<td align='center'>" + proizvod + "</td>" +
   "<td align='center'>" + kolicina + "</td>" +
   "<td align='center'>" + sati + "</td>" +
   "<td align='center'>" + skart + "</td>" +
@@ -118,8 +120,10 @@ $("#slanje" ).on( "click", function(e) {
     keys = ['nalog_id','fullname','product_id','product', 'amount', 'hours', 'scrap','datum','series_id','operation_id','masina','brisanje'];
     url = 'unesi';
     
-   var nalog_id = String($('#listaNaloga').val().trim());
-   var proizvod_id = $('#listaProizvoda').find(":selected").val();
+   //var nalog_id = String($('#listaNaloga').val().trim());
+   var nalog_id =15;
+   //var proizvod_id = $('#listaProizvoda').find(":selected").val();
+   var proizvod_id = 18;
    var uposlenik_id = String($('#search').val().trim());
    var kolicina = String($('#kolicina').val().trim());
    var sati = String($('#sati').val().trim());
